@@ -12,9 +12,9 @@ namespace AmazonShoping.Pages.Categories
 {
     public class DeleteModel : PageModel
     {
-        private readonly AmazonShoping.Data.AmazonCLoneContextSQLite _context;
+        private readonly AmazonShoping.Data.SoukMVVMContext _context;
 
-        public DeleteModel(AmazonShoping.Data.AmazonCLoneContextSQLite context)
+        public DeleteModel(AmazonShoping.Data.SoukMVVMContext context)
         {
             _context = context;
         }

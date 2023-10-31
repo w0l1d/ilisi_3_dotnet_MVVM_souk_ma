@@ -10,10 +10,10 @@ using AmazonShoping.Models;
 
 namespace AmazonShoping.Pages.Products {
     public class CreateModel : PageModel {
-        private readonly AmazonShoping.Data.AmazonCLoneContextSQLite _context;
+        private readonly AmazonShoping.Data.SoukMVVMContext _context;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public CreateModel(AmazonShoping.Data.AmazonCLoneContextSQLite context,
+        public CreateModel(AmazonShoping.Data.SoukMVVMContext context,
             IWebHostEnvironment webHostEnvironment) {
             _context = context;
             _webHostEnvironment = webHostEnvironment;

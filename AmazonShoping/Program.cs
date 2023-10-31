@@ -6,18 +6,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<AmazonCLoneContextSQLite>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("AmazonCLoneContextSQLite")));
+builder.Services.AddDbContext<SoukMVVMContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AmazonCLoneContextSQLServer")));
 
 builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddSession(options => {
     options.Cookie.Name = ".Sook.ma.Session";
-    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.IdleTimeout = TimeSpan.FromDays(7);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
+    options.Cookie.MaxAge = TimeSpan.FromDays(7);
 });
 
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -28,6 +30,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 
@@ -41,5 +44,9 @@ app.UseSession();
 
 app.MapRazorPages();
 
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

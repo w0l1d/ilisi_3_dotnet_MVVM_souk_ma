@@ -13,9 +13,9 @@ namespace AmazonShoping.Pages.Products
 {
     public class EditModel : PageModel
     {
-        private readonly AmazonShoping.Data.AmazonCLoneContextSQLite _context;
+        private readonly AmazonShoping.Data.SoukMVVMContext _context;
 
-        public EditModel(AmazonShoping.Data.AmazonCLoneContextSQLite context)
+        public EditModel(AmazonShoping.Data.SoukMVVMContext context)
         {
             _context = context;
         }

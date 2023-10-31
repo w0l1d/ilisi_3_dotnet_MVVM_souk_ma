@@ -12,9 +12,9 @@ namespace AmazonShoping.Pages.Orders
 {
     public class CreateModel : PageModel
     {
-        private readonly AmazonShoping.Data.AmazonCLoneContextSQLite _context;
+        private readonly AmazonShoping.Data.SoukMVVMContext _context;
 
-        public CreateModel(AmazonShoping.Data.AmazonCLoneContextSQLite context)
+        public CreateModel(AmazonShoping.Data.SoukMVVMContext context)
         {
             _context = context;
         }

@@ -41,11 +41,10 @@
                                         class="input-group mb-3 d-flex align-items-center quantity-container"
                                         style="max-width: 120px">
                                         <div class="input-group-prepend">
-                                            <button
-                                                class="btn btn-outline-black decrease"
-                                                type="button">
+                                            <a asp-action="DecreaseFromCart" asp-controller="Cart" asp-route-productId="@item.Product.Id"
+                                               class="btn btn-outline-black decrease">
                                                 &minus;
-                                            </button>
+                                            </a>
                                         </div>
                                         <input
                                             type="text"
@@ -55,17 +54,19 @@
                                             aria-label="Example text with button addon"
                                             aria-describedby="button-addon1"/>
                                         <div class="input-group-append">
-                                            <button
-                                                class="btn btn-outline-black increase"
-                                                type="button">
+                                            <a asp-action="AddToCart" asp-controller="Cart" asp-route-productId="@item.Product.Id"
+                                               class="btn btn-outline-black increase">
                                                 &plus;
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </td>
-                                <td>@Html.DisplayFor(modelItem => item.Product.Price * item.Quantity)</td>
+                                <td>@(item.Product.Price * item.Quantity)</td>
                                 <td>
-                                    <a href="#" class="btn btn-black btn-sm">X</a>
+                                    <a asp-action="RemoveFromCart" asp-controller="Cart" asp-route-productId="@item.Product.Id"
+                                       class="btn btn-black btn-sm">
+                                        X
+                                    </a>
                                 </td>
                             </tr>
                         }
@@ -78,15 +79,15 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="row mb-5">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <button class="btn btn-black btn-sm btn-block">
-                            Update Cart
-                        </button>
-                    </div>
+                    @* <div class="col-md-6 mb-3 mb-md-0"> *@
+                    @*     <button class="btn btn-black btn-sm btn-block"> *@
+                    @*         Update Cart *@
+                    @*     </button> *@
+                    @* </div> *@
                     <div class="col-md-6">
-                        <button class="btn btn-outline-black btn-sm btn-block">
+                        <a class="btn btn-outline-black btn-sm btn-block" asp-area="" asp-page="/Products/Index">
                             Continue Shopping
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -104,10 +105,8 @@
                             </div>
                             <div class="col-md-6 text-right">
                                 <strong class="text-black">
-                                    @Html.DisplayForModel(
-                                        Model.Order
-                                            .OrderItems
-                                            .Sum(item => item.Quantity * item.Product.Price))
+                                    @(Model.Order
+                                        .OrderItems.Sum(item => item.Quantity * item.Product.Price))
                                 </strong>
                             </div>
                         </div>

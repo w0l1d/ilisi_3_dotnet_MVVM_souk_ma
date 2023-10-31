@@ -11,10 +11,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AmazonShoping.Pages.Products {
     public class IndexModel : PageModel {
-        private readonly AmazonShoping.Data.AmazonCLoneContextSQLite _context;
+        private readonly AmazonShoping.Data.SoukMVVMContext _context;
 
 
-        public IndexModel(AmazonShoping.Data.AmazonCLoneContextSQLite context) {
+        public IndexModel(AmazonShoping.Data.SoukMVVMContext context) {
             _context = context;
         }
 

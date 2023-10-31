@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 namespace AmazonShoping.Pages.Products; 
 
 public class CatalogueModel : PageModel {
-    private readonly AmazonShoping.Data.AmazonCLoneContextSQLite _context;
+    private readonly AmazonShoping.Data.SoukMVVMContext _context;
 
-    public CatalogueModel(AmazonShoping.Data.AmazonCLoneContextSQLite context)
+    public CatalogueModel(AmazonShoping.Data.SoukMVVMContext context)
     {
         _context = context;
     }

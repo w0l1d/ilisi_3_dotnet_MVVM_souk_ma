@@ -6,9 +6,9 @@ namespace AmazonShoping.Pages.Products;
 
 public class AdminModel : PageModel {
     
-    private readonly AmazonShoping.Data.AmazonCLoneContextSQLite _context;
+    private readonly AmazonShoping.Data.SoukMVVMContext _context;
 
-    public AdminModel(AmazonShoping.Data.AmazonCLoneContextSQLite context)
+    public AdminModel(AmazonShoping.Data.SoukMVVMContext context)
     {
         _context = context;
     }

@@ -6,6 +6,7 @@ namespace AmazonShoping.Models;
 public class Order
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long Id { get; set; }
 
     [Required]
@@ -18,7 +19,7 @@ public class Order
     public DateTime checkoutAt { get; set; }
 
     [Required]
-    public string OrderStatus { get; set; } = default!;
+    public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
 
     [Required]
     public string OrderNumber { get; set; } = default!;
@@ -42,10 +43,20 @@ public class Order
     public string PaymentTransactionId { get; set; } = default!;
 
     [Required]
+    [NotMapped]
     public decimal Total { get; set; }
 
     [Required]
     public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
+}
 
+//add order status enum
+public enum OrderStatus
+{
+    Pending,
+    Processing,
+    Shipped,
+    Delivered,
+    Cancelled
 }
