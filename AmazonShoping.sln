@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonShoping", "AmazonShoping\AmazonShoping.csproj", "{82CA3782-6BD5-4CC1-9471-4A3E2DCFA9CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoukMVC", "SoukMVC\SoukMVC.csproj", "{5211F879-1600-4881-938D-7AD17EF8DF77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{82CA3782-6BD5-4CC1-9471-4A3E2DCFA9CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82CA3782-6BD5-4CC1-9471-4A3E2DCFA9CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82CA3782-6BD5-4CC1-9471-4A3E2DCFA9CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5211F879-1600-4881-938D-7AD17EF8DF77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5211F879-1600-4881-938D-7AD17EF8DF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5211F879-1600-4881-938D-7AD17EF8DF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5211F879-1600-4881-938D-7AD17EF8DF77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

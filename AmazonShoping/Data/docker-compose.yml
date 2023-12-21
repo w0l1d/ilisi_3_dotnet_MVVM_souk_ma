@@ -1,15 +1,18 @@
-version: '3.8'
+version: '3.3'
 
 services:
-  sql-server-db:
-    image: "mcr.microsoft.com/mssql/server:2022-latest"
-    ports:
-      - "1433:1433"
-
+  mssql:
+    container_name: sql-server
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    #image: mcr.microsoft.com/mssql/server:2017-CU11-ubuntu
+    restart: always
     environment:
-      MSSQL_SA_PASSWORD: "S3cur3P@ssW0rd!"
       ACCEPT_EULA: "Y"
+      SA_PASSWORD: "S3cur3P@ssW0rd!"
+    ports:
+      - 1439:1433
     volumes:
-      - /home/musdev/ilisilab/dotnet/mssql/data:/var/opt/mssql/data
-      - /home/musdev/ilisilab/dotnet/mssql/log:/var/opt/mssql/log
-      - /home/musdev/ilisilab/dotnet/mssql/secrets:/var/opt/mssql/secrets
+      - my-volume:/var/opt/mssql
+
+volumes:
+  my-volume:
